@@ -14,8 +14,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [allClosings, setAllClosings] = useState([]);
   const [reasonFilter, setReasonFilter] = useState("");
-
-  const fakeTodayDate = new Date(2022, 4, 15).toLocaleDateString("fr");
+  const [dateFilter, setDateFilter] = useState("");
 
   const screenWidth = useWindowSize().width;
 
@@ -40,22 +39,25 @@ function App() {
     );
 
   return (
-    <div className="h-screen w-screen md:flex">
+    <div className="h-fit md:h-screen w-screen md:flex">
       {screenWidth < 768 && <LogoBlocMobile />}
-      <div className="md:h-screen">
-        <ImageAndTimer />
+      <div className="md:h-screen md:flex md:flex-col md: overflow-hidden">
+        <ImageAndTimer allClosings={allClosings} />
       </div>
-      <div className="flex-x-center bg-primary-blue-gradient h-fit min-h-[400px] shadow-general md:w-[530px]">
+      <div
+        className="flex-x-center bg-primary-blue-gradient h-full min-h-[400px] shadow-general
+      md:w-[530px] md:z-30"
+      >
         {screenWidth >= 768 && <LogoBlocDesktop />}
         <PresentationText />
         <div className="flex justify-between space-x-5">
           <SelectReason setReasonFilter={setReasonFilter} />
-          <InputDate />
+          <InputDate setDateFilter={setDateFilter} dateFilter={dateFilter} />
         </div>
         <ClosingList
           allClosings={allClosings}
-          fakeTodayDate={fakeTodayDate}
           reasonFilter={reasonFilter}
+          dateFilter={dateFilter}
         />
       </div>
     </div>

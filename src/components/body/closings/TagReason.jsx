@@ -46,7 +46,11 @@ function TagReason({ reason }) {
         className="absolute centered-absolute w-8 ml-2"
       />
       <div className="absolute centered-absolute opacity-0 w-32 h-12 bg-cta-orange rounded-full hover:opacity-100 flex items-center justify-center">
-        <p className="align-middle">{reasonClosing.type}</p>
+        <p className="align-middle text-mob-xs">
+          {reason !== "MAINTENANCE" && reason !== "FETE DU VIN"
+            ? `bateau ${reason}`
+            : reasonClosing.type}
+        </p>
       </div>
     </div>
   );
