@@ -57,7 +57,3 @@ function TagReason({ reason }) {
 }
 
 export default TagReason;
-
-<div class="transition-all transform translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-  <p class="text-sm text-white">image hover in text using tailwind css</p>
-</div>;

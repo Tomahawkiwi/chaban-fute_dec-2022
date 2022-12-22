@@ -20,7 +20,7 @@ function SelectReason({ setReasonFilter }) {
       <img
         src={arrow}
         alt="arrow"
-        className="absolute right-3 top-3 rotate-90 md:top-4 md"
+        className="absolute right-3 top-3 rotate-90 md:top-4"
       />
     </form>
   );

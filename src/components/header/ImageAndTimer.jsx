@@ -48,7 +48,7 @@ function ImageAndTimer({ allClosings }) {
       <img
         src={bgImage}
         alt="Pont de Chaban Delmas à Bordeaux"
-        className="absolute min-w-[500px] max-h-full left-0 top-0
+        className="absolute min-w-[500px] max-h-full right-0 top-0
         sm:w-full sm:max-h-fit sm:min-h-full
         md:min-w-[1120px] md:max-w-[1300px] md:h-fit md:z-30 md:left-[400px] md:bottom-0"
       />
